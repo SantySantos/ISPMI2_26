@@ -12,11 +12,14 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+
         }
         else
         {
             Destroy(this.gameObject);
         }
+        
+        return Instance;
     }
 
     private void Awake()
