@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -12,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isMoving = false;
 
     [FormerlySerializedAs("Translation Speed")] [SerializeField]
-    public float transitionDuration = 0.5f;
+    public float transitionDuration = 0.15f;
 
     //keeping track of player coordinates 
     private static Vector2Int playerMatrixPosition;
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Keeping track of the courutine active
+    //Keeping track of the coroutine active
     private Coroutine currentCoroutine = null;
 
 
