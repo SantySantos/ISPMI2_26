@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
+            Instance = this;    
             DontDestroyOnLoad(this.gameObject);
 
         }
