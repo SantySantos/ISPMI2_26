@@ -1,29 +1,33 @@
 using System;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+namespace Managers
 {
-
-    public static UIManager Instance { get; private set; }
-
-    public UIManager GetInstance()
+    public class UIManager : MonoBehaviour
     {
-        if (Instance == null)
-        {
-            Instance = this;    
-            DontDestroyOnLoad(this.gameObject);
 
-        }
-        else
+        public static UIManager Instance { get; private set; }
+
+        public UIManager GetInstance()
         {
-            Destroy(this.gameObject);
-        }
+            if (Instance == null)
+            {
+                Instance = this;    
+                DontDestroyOnLoad(this.gameObject);
+
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         
-        return Instance;
+            return Instance;
+        }
+
+        private void Awake()
+        {
+            this.GetInstance();
+        }
     }
 
-    private void Awake()
-    {
-        this.GetInstance();
-    }
 }
