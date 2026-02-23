@@ -24,6 +24,8 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this);
         }
         else
+        {
             Destroy(this);
+        }
     }
 }
