@@ -11,7 +11,7 @@ namespace Managers
 
         public static GameState gameState;
 
-        private HPSystem playerHealth;
+        private HPSystemComponent playerHealth;
 
         [FormerlySerializedAs("Player")] [SerializeField]
         public GameObject player;
@@ -40,7 +40,7 @@ namespace Managers
             {
                 if (playerHealth == null)
                 {
-                    playerHealth = player.GetComponent<HPSystem>();
+                    playerHealth = player.GetComponent<HPSystemComponent>();
 
                     if (playerHealth == null)
                     {
@@ -59,7 +59,7 @@ namespace Managers
 
         public void SetPlayer(GameObject player)
         {
-            if(player.GetComponent<HPSystem>() != null)
+            if(player.GetComponent<HPSystemComponent>() != null)
             {
                 this.player = player;
                 return;
@@ -107,7 +107,7 @@ namespace Managers
                 case GameState.Playing:
                     if (playerHealth == null && player != null)
                     {
-                        playerHealth = player.GetComponent<HPSystem>();
+                        playerHealth = player.GetComponent<HPSystemComponent>();
                     }
                     
                     else if (playerHealth == null)
