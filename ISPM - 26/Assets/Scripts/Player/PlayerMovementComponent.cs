@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [FormerlySerializedAs("PlayerCamera")] [SerializeField]
     public Camera playerCamera;
 
-    private Vector2 player2DSteep;
+    private Vector2 player2DStep;
     private bool isMoving = false;
 
     [FormerlySerializedAs("Translation Speed")] [SerializeField]
@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     //keeping track of player coordinates 
     private static Vector2Int playerMatrixPosition;
 
+    [SerializeField] private GameplayGridConfig gridConfig;
+    
+    //Keeping track of the coroutine active
+    private Coroutine currentCoroutine = null;
+    
     public static Vector2Int PlayerMatrixPosition
     {
         get => playerMatrixPosition;
@@ -28,12 +33,7 @@ public class PlayerMovement : MonoBehaviour
             playerMatrixPosition = new Vector2Int(clampedX, clampedY);
         }
     }
-
-    //Keeping track of the coroutine active
-    private Coroutine currentCoroutine = null;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         if (playerCamera == null)
@@ -41,10 +41,14 @@ public class PlayerMovement : MonoBehaviour
 
         float distanceFromCamera = Vector3.Distance(playerCamera.transform.position, transform.position);
 
-        player2DSteep.x = ((playerCamera.ViewportToWorldPoint(new Vector3(1f, 0.5f, distanceFromCamera)).x) * 2f) / 3f;
-        player2DSteep.y = ((playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 1f, distanceFromCamera)).y) * 2f) / 3f;
+        player2DStep.x = ((playerCamera.ViewportToWorldPoint(new Vector3(1f, 0.5f, distanceFromCamera)).x) * 2f) / 3f;
+        player2DStep.y = ((playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 1f, distanceFromCamera)).y) * 2f) / 3f;
 
         PlayerMatrixPosition = new Vector2Int(1, 1);
+        
+        gridConfig.stepX = player2DStep.x;
+        gridConfig.stepY = player2DStep.y;
+        
     }
 
     void Update()
@@ -58,13 +62,13 @@ public class PlayerMovement : MonoBehaviour
         {
             switch (xInput)
             {
-                case > 0 when transform.position.x < player2DSteep.x:
-                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.right, player2DSteep.x));
+                case > 0 when transform.position.x < player2DStep.x:
+                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.right, player2DStep.x));
                     isMoving = true;
                     PlayerMatrixPosition += Vector2Int.right;
                     break;
-                case < 0 when transform.position.x > (player2DSteep.x * -1):
-                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.left, player2DSteep.x));
+                case < 0 when transform.position.x > (player2DStep.x * -1):
+                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.left, player2DStep.x));
                     isMoving = true;
                     PlayerMatrixPosition += Vector2Int.left;
                     break;
@@ -75,13 +79,13 @@ public class PlayerMovement : MonoBehaviour
         {
             switch (yInput)
             {
-                case > 0 when transform.position.y < player2DSteep.y:
-                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.up, player2DSteep.y));
+                case > 0 when transform.position.y < player2DStep.y:
+                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.up, player2DStep.y));
                     isMoving = true;
                     PlayerMatrixPosition += Vector2Int.down;
                     break;
-                case < 0 when transform.position.y > (player2DSteep.y * -1):
-                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.down, player2DSteep.y));
+                case < 0 when transform.position.y > (player2DStep.y * -1):
+                    currentCoroutine = StartCoroutine(MovePlayer(Vector2.down, player2DStep.y));
                     isMoving = true;
                     PlayerMatrixPosition += Vector2Int.up;
                     break;

@@ -20,7 +20,7 @@ public class BulletLifetimeComponent : MonoBehaviour
 
         if (timer >= lifetime)
         {
-            bulletPool.ReturnBullet(gameObject);
+            bulletPool.ReleaseBullet(gameObject);
         }
     }
 }

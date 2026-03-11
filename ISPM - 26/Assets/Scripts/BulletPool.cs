@@ -11,7 +11,6 @@ public class BulletPool : MonoBehaviour
 
     private void Awake()
     {
-        //create bullets on awake
 
         for (int i = 0; i < poolSize; i++)
         {
@@ -36,12 +35,12 @@ public class BulletPool : MonoBehaviour
             return bullet;
         }
         
-        Debug.Log("Pool is empty, INCREASE SIZE!!!");
+        Debug.LogWarning("Pool is empty, INCREASE SIZE!!!");
         
         return Instantiate(bulletPrefab, transform);
     }
 
-    public void ReturnBullet(GameObject bullet)
+    public void ReleaseBullet(GameObject bullet)
     {
         bullet.SetActive(false);
         pool.Enqueue(bullet);
