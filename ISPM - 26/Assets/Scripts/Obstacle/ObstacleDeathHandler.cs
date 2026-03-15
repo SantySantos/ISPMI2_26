@@ -7,7 +7,7 @@ public class ObstacleDeathHandler : MonoBehaviour
     public void Initialize(ObstaclePool obstaclePool)
     {
         pool = obstaclePool;
-        GetComponent<HPSystemComponent>().ResetHP();
+        GetComponent<HPSystemComponent>().Initialize();
         GetComponent<HPSystemComponent>().OnDeath += OnDeath;
     }
 

@@ -33,5 +33,5 @@ public class HPSystemComponent : MonoBehaviour, IDamageable
         
         OnDamage?.Invoke(damage);
     }
-    public void ResetHP() => HP = maxHP;
+    public void Initialize() => HP = maxHP;
 }
