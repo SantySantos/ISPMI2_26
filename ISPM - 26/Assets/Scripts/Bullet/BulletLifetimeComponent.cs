@@ -21,6 +21,7 @@ public class BulletLifetimeComponent : MonoBehaviour
         if (timer >= lifetime)
         {
             bulletPool.ReleaseBullet(gameObject);
+            Debug.Log("Bullet Died");
         }
     }
 }

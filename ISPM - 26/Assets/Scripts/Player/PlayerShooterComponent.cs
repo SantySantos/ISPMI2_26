@@ -10,6 +10,9 @@ public class PlayerShooterComponent : MonoBehaviour
 
     private void Shoot()
     {
+        
+        
+        Debug.Log("SHOOOOT!");
         GameObject bullet = bulletPool.GetBullet();
         
         bullet.transform.position = nozzle.position;

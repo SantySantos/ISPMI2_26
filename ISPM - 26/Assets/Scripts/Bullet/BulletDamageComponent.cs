@@ -26,5 +26,6 @@ public class BulletDamageComponent : MonoBehaviour
         OnHit?.Invoke(collision.gameObject);
         
         bulletPool.ReleaseBullet(gameObject);
+        
     }
 }

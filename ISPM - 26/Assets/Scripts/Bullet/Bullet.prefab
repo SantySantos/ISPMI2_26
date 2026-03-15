@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 347722034540915325}
   - component: {fileID: 1843347037827026424}
   - component: {fileID: 7508416040716730792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.79201, y: -0, z: -18.96122}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a028daec77d53545b696626e7251db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletMovementComponent
-  speed: 10
+  speed: 40
 --- !u!114 &1843347037827026424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce3cf48d73afc548806d021ace6fa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletDamageComponent
-  damage: 10
+  damage: 100
 --- !u!114 &7508416040716730792
 MonoBehaviour:
   m_ObjectHideFlags: 0
