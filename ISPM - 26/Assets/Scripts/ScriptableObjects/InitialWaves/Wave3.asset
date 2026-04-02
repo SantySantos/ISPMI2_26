@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541ce54f06a00a745a64cbecfbfda37d, type: 3}
   m_Name: Wave3
   m_EditorClassIdentifier: Assembly-CSharp::WavesData
-  obstaclesCount: 1
-  obstacleSpeed: 30
-  obstacleDamage: 0
-  timeBetweenObstaclesSpawn: 0
-  timeUntilNextWaveStarts: 0
+  obstaclesCount: 14
+  obstacleSpeed: 7
+  obstacleDamage: 7
+  timeBetweenObstaclesSpawn: 1.8
+  timeUntilNextWaveStarts: 26
