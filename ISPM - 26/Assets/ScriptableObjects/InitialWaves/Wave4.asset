@@ -16,4 +16,4 @@ MonoBehaviour:
   obstacleSpeed: 8
   obstacleDamage: 8
   timeBetweenObstaclesSpawn: 1.7
-  timeUntilNextWaveStarts: 30
+  timeUntilNextWaveStarts: 24

@@ -24,14 +24,15 @@ public class HPSystemComponent : MonoBehaviour, IDamageable
     {
         if(HP <= 0) return;
         
-        HP = Mathf.Max(HP - Mathf.FloorToInt(damage), 0);
+        HP = Mathf.Max(HP - Mathf.CeilToInt(damage), 0);
+        Debug.Log(HP.ToString());
 
         if (HP <= 0)
         {
             OnDeath?.Invoke();
         }
         
-        OnDamage?.Invoke(damage);
+        OnDamage?.Invoke(HP);
     }
     public void Initialize() => HP = maxHP;
 }

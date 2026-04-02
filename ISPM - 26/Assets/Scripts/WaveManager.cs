@@ -12,7 +12,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private ObstacleSpawner obstacleSpawner;
     
     private int currentWaveIndex = 0;
-
+    public int currentWave => currentWaveIndex;
+    public event Action<int> onWaveChange;
     private void Start()
     {
         StartCoroutine(Run());
@@ -26,8 +27,9 @@ public class WaveManager : MonoBehaviour
             
             yield return StartCoroutine(obstacleSpawner.SpawnWave(currentWave));
             yield return new WaitForSeconds(currentWave.timeUntilNextWaveStarts);
-
+            
             currentWaveIndex++;
+            onWaveChange?.Invoke(currentWaveIndex);
         }
     }
 

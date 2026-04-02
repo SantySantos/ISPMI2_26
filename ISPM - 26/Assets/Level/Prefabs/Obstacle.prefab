@@ -196,3 +196,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1f3f8a5fd63b145ade5e634e4aa5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleDeathHandler
+  onDeath: {fileID: 11400000, guid: bdf76bf2bbd68ac4faa8901b0eff7887, type: 2}
