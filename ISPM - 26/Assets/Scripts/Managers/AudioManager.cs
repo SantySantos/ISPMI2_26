@@ -8,15 +8,22 @@ public enum Quality
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager AudioInstance;
-    public Slider AudioSlider;
+
+    public Slider sfxSlider;
+    public Slider musicSlider;
+    public Toggle musicToggle;
+    public Toggle SFXToggle;
+
 
     [Range(0, 1)]
-    public float AudioVolume = 0.3f;
+    public float SFXVolume = 0.3f;
+    public float MusicVolume = 0.3f;
     public bool IsMuted = false;
     public Quality GameQuality = Quality.med;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Awake()
     {
+        Debug.Log("Audio Manager is active");
         //Volume = VolueSlider.value ;
         if (AudioManager.AudioInstance == null)
         {
@@ -27,5 +34,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+    }
+
+    void Start()
+    {
+        sfxSlider.value = SFXVolume;
+        musicSlider.value = MusicVolume;
     }
 }
