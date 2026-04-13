@@ -18,6 +18,7 @@ public class ObstacleDeathHandler : MonoBehaviour
     private void OnDeath()
     {
         onDeath.RaiseEvent();
+        pool.Explode(transform.position);
         GetComponent<HPSystemComponent>().OnDeath -= OnDeath;
         pool.ReleaseObstacle(gameObject);
     }
