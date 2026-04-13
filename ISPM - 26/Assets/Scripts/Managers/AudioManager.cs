@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
 
     [Range(0, 1)]
     public float SFXVolume = 0.3f;
-    public float MusicVolume = 0.3f;
+    public float MusicVolume = 0.1f;
     public bool IsMuted = false;
     public Quality GameQuality = Quality.med;
 
