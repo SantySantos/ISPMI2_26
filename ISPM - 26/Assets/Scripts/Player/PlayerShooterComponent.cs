@@ -7,6 +7,15 @@ public class PlayerShooterComponent : MonoBehaviour
     
     [SerializeField] private Transform  nozzle;
 
+    private AudioSource audioSource;
+
+    public AudioClip ShotSound;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = AudioManager.AudioInstance.SFXVolume;
+    }
 
     private void Shoot()
     {
@@ -23,9 +32,12 @@ public class PlayerShooterComponent : MonoBehaviour
     }
     private void Update()
     {
+        audioSource.volume = AudioManager.AudioInstance.SFXVolume;
+
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+            audioSource.PlayOneShot(ShotSound);
         }
     }
     
