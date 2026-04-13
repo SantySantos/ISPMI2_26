@@ -1,11 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerShooterComponent : MonoBehaviour
 {
     [SerializeField] private BulletPool bulletPool;
     
     [SerializeField] private Transform  nozzle;
+
+    [SerializeField] private Transform flashpoint;
+
+    [SerializeField] private ParticleSystem muzzleflash;
 
     private AudioSource audioSource;
 
@@ -38,6 +43,9 @@ public class PlayerShooterComponent : MonoBehaviour
         {
             Shoot();
             audioSource.PlayOneShot(ShotSound);
+            ParticleSystem flash = Instantiate(muzzleflash, flashpoint.position, Quaternion.identity);
+            flash.Play();
+            Destroy(flash.gameObject, 0.2f);
         }
     }
     
