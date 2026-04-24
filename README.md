@@ -8,14 +8,16 @@ A project for the class of Information Systems and Project Methodology II
 https://drive.google.com/drive/u/0/folders/1Zr07cjOkEBO2WMJYJvxV6YxTVxTIeI2B
 
 ## About
-Space Shooter is a 3D infinite space shooter developed as part of the A project for the class of Information Systems and Project Methodology II course. The player plays as a UFO through an endless galaxy, shooting or dodging incoming asteroids while managing their health and trying to get the highest score possible. The game escalates in difficulty over time, with asteroids spawning faster and more frequently the longer the player survives.
+Space Shooter is a 3D infinite space shooter developed as part of the A project for the class of Information Systems and Project Methodology II course. 
+
+The player plays as a UFO through an endless galaxy, shooting or dodging incoming asteroids while managing their health and trying to get the highest score possible. The game escalates in difficulty over time, with asteroids spawning faster and more frequently the longer the player survives.
 
 ## Gameplay
 - Play as an UFO through an infinite 3D space environment.
 - Press `Spacebar` to shoot incoming asteroids.
 - Avoid asteroid collisions as each hit reduces your health.
 - Survive as long as possible to increase your score.
-- Difficulty escalates over time, as asteroids get faster and more frequent every wave
+- Difficulty escalates over time, as asteroids get faster and more frequent every wave.
 
 ## Built With
 | Tool | Purpose |
