@@ -9,6 +9,15 @@ public class BulletPool : MonoBehaviour
     
     private Queue<GameObject> pool = new Queue<GameObject>();
 
+    //getter
+    public int PoolSize => poolSize;
+
+    //setter
+    public void SetPoolSize(int size)
+    {
+        poolSize = size;
+    }
+
     private void Awake()
     {
 
