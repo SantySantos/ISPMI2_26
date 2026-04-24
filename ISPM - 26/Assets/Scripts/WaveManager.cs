@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
 
     private WavesData GetWave()
     {
-        if (currentWaveIndex < manualWavesData.Length - 1)
+        if (currentWaveIndex < manualWavesData.Length)
             return manualWavesData[currentWaveIndex];
         
         return proceduralWaveData.GenerateNextWave(currentWaveIndex);

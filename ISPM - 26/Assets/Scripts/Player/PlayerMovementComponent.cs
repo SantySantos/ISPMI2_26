@@ -130,8 +130,7 @@ public class PlayerMovement : MonoBehaviour
                }*/
 
         #endregion
-
-        Debug.Log("Player Location = " + PlayerMatrixPosition.ToString());
+        
     }
 
     IEnumerator MovePlayer(Vector2 direction, float axis)

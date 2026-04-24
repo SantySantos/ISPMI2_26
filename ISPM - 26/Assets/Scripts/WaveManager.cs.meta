@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 25790ff70a2b19c4d96a6e737f23c2f5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - proceduralWaveData: {fileID: 11400000, guid: 1139eb88061922b4c80bd8eb052b800c, type: 2}
+  - obstacleSpawner: {instanceID: 0}
+  - notificationSound: {fileID: 8300000, guid: 10d8a011182f7c1488ba04d641aa3e29, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

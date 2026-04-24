@@ -9,21 +9,21 @@ public class ProceduralWaveData : ScriptableObject
 
     public int countIncrementPerWave = 2;
 
-    public int maxCountOfObstacles = 100;
+    public int maxCountOfObstacles = 200;
     
     [Header("Obstacle Speed")]
     public float baseObstacleSpeed = 3f;
 
     public float obstacleSpeedIncrement = 2f;
     
-    public float maxObstacleSpeed = 100f;
+    public float maxObstacleSpeed = 200f;
     
     [Header("Obstacle Damage")]
     public float baseObstacleDamage = 10f;
     
     public float obstacleDamageIncrement = 2f;
     
-    public float maxObstacleDamage = 100f;
+    public float maxObstacleDamage = 40f;
     
     [Header("Time Controllers")]
     
@@ -56,8 +56,8 @@ public class ProceduralWaveData : ScriptableObject
         float newTimeBetweenObstacleSpawns = baseTimeBetweenObstacleSpawns - ( currentWaveIndex * spawnTimeDecrement);
         nextWave.timeBetweenObstaclesSpawn = Math.Max(newTimeBetweenObstacleSpawns, minTimeBetweenObstacleSpawns);
         
-        float newTimeUntilNextWaveStarts = baseTimeUntilNextWave - (currentWaveIndex - timeUntilNextWaveDecrement);
-        nextWave.timeUntilNextWaveStarts = newTimeUntilNextWaveStarts;
+        float newTimeUntilNextWaveStarts = baseTimeUntilNextWave - (currentWaveIndex * timeUntilNextWaveDecrement);
+        nextWave.timeUntilNextWaveStarts = Math.Min(newTimeUntilNextWaveStarts, minTimeBetweenObstacleSpawns) ;
         
         return nextWave;
     }

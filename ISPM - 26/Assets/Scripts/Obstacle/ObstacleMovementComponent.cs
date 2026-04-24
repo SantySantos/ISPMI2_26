@@ -15,7 +15,7 @@ public class ObstacleMovementComponent : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.back * (speed * Time.deltaTime));
+        transform.Translate(Vector3.back * (speed * Time.deltaTime), Space.World);
 
         if (transform.position.z <= gridConfig.deSpawn)
         {

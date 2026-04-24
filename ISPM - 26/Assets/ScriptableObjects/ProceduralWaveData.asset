@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: ProceduralWaveData
   m_EditorClassIdentifier: Assembly-CSharp::ProceduralWaveData
   baseCountIncrement: 3
-  countIncrementPerWave: 2
+  countIncrementPerWave: 7
   maxCountOfObstacles: 100
   baseObstacleSpeed: 3
-  obstacleSpeedIncrement: 2
+  obstacleSpeedIncrement: 6
   maxObstacleSpeed: 100
   baseObstacleDamage: 10
-  obstacleDamageIncrement: 2
+  obstacleDamageIncrement: 5
   maxObstacleDamage: 100
   baseTimeBetweenObstacleSpawns: 1
   spawnTimeDecrement: 0.05
   minTimeBetweenObstacleSpawns: 0.1
-  baseTimeUntilNextWave: 3
+  baseTimeUntilNextWave: 4
   timeUntilNextWaveDecrement: 0.2
   minTimeUntilNextWave: 0.2
